@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Page Title -->
+<h3 class="pb-2">Editar Item</h3>
+
+<!-- Form for Editing an Item -->
+<form method="post">
+    <!-- Name Input Field -->
+    <div class="mb-3">
+        <label for="name" class="form-label">Nombre</label>
+        <input type="text" class="form-control" name="name" value="{{ item.name }}" required>
+    </div>
+
+    <!-- Price Input Field -->
+    <div class="mb-3">
+        <label for="price" class="form-label">Precio</label>
+        <input type="number" step="0.01" class="form-control" name="price" value="{{ item.price }}" required>
+    </div>
+
+    <!-- MAC Address Input Field -->
+    <div class="mb-3">
+        <label for="mac_address" class="form-label">Dirección MAC</label>
+        <input type="text" class="form-control" name="mac_address" value="{{ item.mac_address }}">
+    </div>
+
+    <!-- Serial Number Input Field -->
+    <div class="mb-3">
+        <label for="serial_number" class="form-label">Número de serie</label>
+        <input type="text" class="form-control" name="serial_number" value="{{ item.serial_number }}">
+    </div>
+
+    <!-- Manufacturer Input Field -->
+    <div class="mb-3">
+        <label for="manufacturer" class="form-label">Fabricante</label>
+        <input type="text" class="form-control" name="manufacturer" value="{{ item.manufacturer }}">
+    </div>
+
+    <!-- Description Input Field -->
+    <div class="mb-3">
+        <label for="description" class="form-label">Descripción</label>
+        <textarea class="form-control" name="description">{{ item.description }}</textarea>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="d-flex justify-content-end gap-2">
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-success">Editar</button>
+        <!-- Cancel Button Redirects to Index Page -->
+        <a href="{{ url_for('index') }}" class="btn btn-secondary">Cancelar</a>
+    </div>
+</form>
+{% endblock %}

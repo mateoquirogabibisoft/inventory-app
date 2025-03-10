@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es"> <!-- Defines the document type and sets the language to Spanish -->
+
+<head>
+    <meta charset="UTF-8"> <!-- Specifies the character encoding -->
+    <title>Inventario</title> <!-- Page title displayed in the browser tab -->
+
+    <!-- Include Bootstrap from a CDN for styling -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+
+    <!-- Include Bootstrap Icons for additional UI elements -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+    <!-- Include Font Awesome for more icon options -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+    <div class="container mt-4"> <!-- Bootstrap container with top margin -->
+        <h1 class="mb-4">Inventario</h1> <!-- Main heading with bottom margin -->
+
+        <div class="px-4"> <!-- Wrapper with horizontal padding -->
+            <!-- The specific content of each page will be inserted here -->
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+</body>
+
+</html>

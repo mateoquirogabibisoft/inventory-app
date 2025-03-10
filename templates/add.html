@@ -1,0 +1,50 @@
+{% extends "base.html" %} <!-- Extends the base template to inherit common layout -->
+
+{% block content %}
+<h3 class="pb-2">Agregar Item</h3> <!-- Section title with bottom padding -->
+
+<!-- Form for adding a new inventory item -->
+<form method="post">
+    <!-- Name input field -->
+    <div class="mb-3">
+        <label for="name" class="form-label">Nombre</label>
+        <input type="text" class="form-control" name="name" required>
+    </div>
+
+    <!-- Price input field (accepts decimals with two decimal places) -->
+    <div class="mb-3">
+        <label for="price" class="form-label">Precio</label>
+        <input type="number" step="0.01" class="form-control" name="price" required>
+    </div>
+
+    <!-- MAC Address input field -->
+    <div class="mb-3">
+        <label for="mac_address" class="form-label">Dirección MAC</label>
+        <input type="text" class="form-control" name="mac_address">
+    </div>
+
+    <!-- Serial Number input field -->
+    <div class="mb-3">
+        <label for="serial_number" class="form-label">Número de serie</label>
+        <input type="text" class="form-control" name="serial_number">
+    </div>
+
+    <!-- Manufacturer input field -->
+    <div class="mb-3">
+        <label for="manufacturer" class="form-label">Fabricante</label>
+        <input type="text" class="form-control" name="manufacturer">
+    </div>
+
+    <!-- Description input field (multiline) -->
+    <div class="mb-4">
+        <label for="description" class="form-label">Descripción</label>
+        <textarea class="form-control" name="description"></textarea>
+    </div>
+
+    <!-- Action buttons -->
+    <div class="d-flex justify-content-end gap-2">
+        <button type="submit" class="btn btn-success">Agregar</button> <!-- Submit button -->
+        <a href="{{ url_for('index') }}" class="btn btn-secondary">Cancelar</a> <!-- Cancel button -->
+    </div>
+</form>
+{% endblock %}
